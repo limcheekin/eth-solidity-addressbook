@@ -8,3 +8,10 @@ typechain-types
 # Hardhat files
 cache
 artifacts
+
+# Subgraph files
+subgraphs/abis
+subgraphs/build
+subgraphs/generated
+subgraphs/node_modules
+subgraphs/yarn.lock

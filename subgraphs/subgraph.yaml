@@ -1,0 +1,33 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: AddressBook
+    network: goerli
+    source:
+      address: "0xCa5c744c3be31e5888dD9eF5Dbbc4b4681Ef9313"
+      abi: AddressBook
+      startBlock: 8565256
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Created
+        - Deleted
+        - IndexUpdated
+        - Updated
+      abis:
+        - name: AddressBook
+          file: ./abis/AddressBook.json
+      eventHandlers:
+        - event: Created(indexed address,uint256,bytes32,bytes32,uint256,uint256)
+          handler: handleCreated
+        - event: Deleted(indexed address,uint256)
+          handler: handleDeleted
+        - event: IndexUpdated(indexed address,uint256)
+          handler: handleIndexUpdated
+        - event: Updated(indexed address,uint256,bytes32,bytes32,uint256,uint256)
+          handler: handleUpdated
+      file: ./src/address-book.ts
