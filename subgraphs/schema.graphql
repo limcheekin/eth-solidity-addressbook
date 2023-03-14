@@ -2,8 +2,8 @@ type Created @entity(immutable: true) {
   id: Bytes!
   userAddress: Bytes! # address
   index: BigInt! # uint256
-  name: Bytes! # bytes32
-  email: Bytes! # bytes32
+  name: String!
+  email: String!
   age: BigInt! # uint256
   birthDate: BigInt! # uint256
   blockNumber: BigInt!
@@ -33,8 +33,8 @@ type Updated @entity(immutable: true) {
   id: Bytes!
   userAddress: Bytes! # address
   index: BigInt! # uint256
-  name: Bytes! # bytes32
-  email: Bytes! # bytes32
+  name: String!
+  email: String!
   age: BigInt! # uint256
   birthDate: BigInt! # uint256
   blockNumber: BigInt!
